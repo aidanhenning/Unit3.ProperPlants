@@ -1,0 +1,15 @@
+ul {
+  list-style: none;
+}
+.cart-item {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.25rem;
+}
+.cart-item-quantity {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+span {
+  text-align: center;
+}
