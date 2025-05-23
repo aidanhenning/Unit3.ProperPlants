@@ -7,28 +7,28 @@ export default function App() {
   const [cartList, setCartList] = useState([]);
 
   function addToCart(plant) {
-    setCartList((prevCart) => {
-      if (prevCart.find((item) => item.id === plant.id)) {
-        return prevCart.map((item) =>
+    setCartList((cartList) => {
+      if (cartList.find((item) => item.id === plant.id)) {
+        return cartList.map((item) =>
           item.id === plant.id ? { ...item, quantity: item.quantity + 1 } : item
         );
       } else {
-        return [...prevCart, { ...plant, quantity: 1 }];
+        return [...cartList, { ...plant, quantity: 1 }];
       }
     });
   }
 
   function incrementQuantity(id) {
-    setCartList((prevCart) =>
-      prevCart.map((item) =>
+    setCartList((cartList) =>
+      cartList.map((item) =>
         item.id === id ? { ...item, quantity: item.quantity + 1 } : item
       )
     );
   }
 
   function decrementQuantity(id) {
-    setCartList((prevCart) =>
-      prevCart
+    setCartList((cartList) =>
+      cartList
         .map((item) =>
           item.id === id ? { ...item, quantity: item.quantity - 1 } : item
         )
